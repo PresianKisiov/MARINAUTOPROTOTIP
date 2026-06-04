@@ -1,0 +1,6 @@
+{
+  "name": "ЛЪКИ АВТО",
+  "description": "Автосервиз ЛЪКИ АВТО Габрово — Специализиран ремонт на стартери, алтернатори и автоклиматици. Бързо и качествено обслужване.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
