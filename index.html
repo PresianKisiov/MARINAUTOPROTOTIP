@@ -845,11 +845,28 @@
             line-height: 1.1;
         }
 
+        @keyframes text-focus-in {
+            0% {
+                filter: blur(12px);
+                opacity: 0;
+            }
+            100% {
+                filter: blur(0px);
+                opacity: 1;
+            }
+        }
+
+        .text-animate {
+            animation: text-focus-in 1.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+            animation-delay: 0.8s;
+        }
+
         .hero-subtitle {
-            font-size: clamp(1rem, 1.5vw, 1.25rem);
-            color: var(--text-muted);
+            font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+            line-height: 1.6;
+            color: #d1d5db;
             margin-bottom: 40px;
-            max-width: 500px;
+            max-width: 550px;
         }
 
         .hero-action-box {
@@ -1697,7 +1714,7 @@
                 <!-- Left Content -->
                 <div class="hero-content reveal-left">
                     <h1 class="hero-title">Търсите ли надежден сервиз в <br><span class="text-accent">Община Троян?</span></h1>
-                    <p class="hero-subtitle">Специализиран ремонт на стартери, алтернатори и автоклиматици. Доверете се на дългогодишен опит и високо качество.</p>
+                    <p class="hero-subtitle text-animate">Специализиран сервиз- ремонт на двигатели, индивидуално окачване и настройки в мозъка/компютъра, според желанията на собственика на Nissan Patrol. Правим всичко за удовлетвореноста на клиента!</p>
                     
                     <a href="#about" class="btn btn-outline" style="border-radius: 30px; padding: 12px 35px; border-color: rgba(255,255,255,0.4); margin-bottom: 40px; border-width: 1px;">Прочети повече</a>
                     
@@ -1823,79 +1840,39 @@
 
     <!-- Services Section -->
     <section id="services">
-        <div class="container">
-            <div class="section-header reveal">
-                <h2>Услуги</h2>
-                <p>Пълен спектър от специализирани автосервизни решения с фокус към всеки детайл.</p>
+        <div class="container reveal">
+            <div class="section-header" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); line-height: 1.3; text-transform: uppercase; margin-bottom: 25px;">Специализиран ремонт на двигател, окачване и индивидуални настройки на компютъра на <span style="color: var(--accent);">звяра Nissan</span></h2>
+                <div style="width: 80px; height: 4px; background: var(--accent); margin: 0 auto 35px; border-radius: 2px;"></div>
+                <p style="font-size: 1.25rem; line-height: 1.8; color: var(--text-light); font-weight: 500;">
+                    Специализиран сервиз - ремонт на двигатели, индивидуално окачване и настройки в мозъка/компютъра, според желанията на собственика на Nissan Patrol. Правим всичко за удовлетвореноста на клиента!
+                </p>
             </div>
-            
-            <div class="services-comprehensive reveal delay-200">
-                <div class="services-tabs">
-                    <button class="service-tab active" data-tab="tab-charging">Стартери и алтернатори</button>
-                    <button class="service-tab" data-tab="tab-ac">Автоклиматици</button>
-                    <button class="service-tab" data-tab="tab-diag">Компютърна диагностика</button>
-                    <button class="service-tab" data-tab="tab-consumables">Смяна на консумативи</button>
-                    <button class="service-tab" data-tab="tab-suspension-brakes">Ходова част и спирачна система</button>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                <!-- Service 1 -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 40px 30px; border-radius: 16px; transition: transform 0.3s ease; text-align: center;" class="hover-scale">
+                    <div style="width: 70px; height: 70px; background: rgba(229, 9, 20, 0.1); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 35px; height: 35px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    </div>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Ремонт на Двигатели</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Пълно възстановяване и специализиран ремонт на двигатели за Nissan Patrol. Гарантирана мощност и надеждност.</p>
                 </div>
-                <div class="services-content">
-                    
-                    <div class="service-pane active" id="tab-charging">
-                        <h3><span style="color: var(--accent); padding-right: 15px; font-weight: 800;">[СПЕЦИАЛИЗИРАН]</span> Ремонт на стартери и алтернатори</h3>
-                        <ul class="service-detail-list">
-                            <li>Отстраняване на проблеми по запалването</li>
-                            <li>Ремонт на стартери, алтернатори и генератори</li>
-                            <li>Смяна на бензинова помпа</li>
-                            <li>Свещи, кабели, бобина, делко</li>
-                            <li>Настройка на аванс</li>
-                            <li>Проверка и смяна на датчици</li>
-                        </ul>
+                <!-- Service 2 -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 40px 30px; border-radius: 16px; transition: transform 0.3s ease; text-align: center;" class="hover-scale">
+                    <div style="width: 70px; height: 70px; background: rgba(229, 9, 20, 0.1); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 35px; height: 35px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                     </div>
-
-                    <div class="service-pane" id="tab-ac">
-                        <h3>Автоклиматици</h3>
-                        <ul class="service-detail-list">
-                            <li>Проверка с UV лампа и пропускотърсач</li>
-                            <li>Диагностика на климатичната система</li>
-                            <li>Ремонт на компресори и радиатори</li>
-                            <li>Измиване и почистване на радиатори</li>
-                            <li>Премахване на неприятни миризми</li>
-                            <li>Зареждане с екологично чист фреон</li>
-                        </ul>
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Окачване по Поръчка</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Индивидуално изграждане и модификация на окачването, специално съобразено с вашите off-road изисквания.</p>
+                </div>
+                <!-- Service 3 -->
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); padding: 40px 30px; border-radius: 16px; transition: transform 0.3s ease; text-align: center;" class="hover-scale">
+                    <div style="width: 70px; height: 70px; background: rgba(229, 9, 20, 0.1); color: var(--accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" style="width: 35px; height: 35px;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                     </div>
-
-                    <div class="service-pane" id="tab-diag">
-                        <h3>Компютърна Диагностика</h3>
-                        <ul class="service-detail-list">
-                            <li>Двигател и компоненти</li>
-                            <li>AIR BAG, ABS, ESP, BAS</li>
-                            <li>Имобилайзер и заключващи системи</li>
-                            <li>Климат контрол</li>
-                            <li>Автоматични и ръчни скоростни кутии</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-pane" id="tab-consumables">
-                        <h3>Смяна на Консумативи</h3>
-                        <ul class="service-detail-list">
-                            <li>Ангренажен ремък, клиновиден ремък, пистов ремък</li>
-                            <li>Водна помпа и обтяжни ролки</li>
-                            <li>Масло, маслен, въздушен и поленов филтър</li>
-                            <li>Спирачна течност и антифриз</li>
-                            <li>Масло за автоматични скоростни кутии</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-pane" id="tab-suspension-brakes">
-                        <h3>Ходова част и Спирачна система</h3>
-                        <ul class="service-detail-list">
-                            <li>Амортисьори, макферсони, пружини</li>
-                            <li>Носачи, шарнири, кормилни кутии</li>
-                            <li>Накладки и спирачни дискове</li>
-                            <li>Спирачни маркучи и помпа</li>
-                            <li>Ремонт на ръчна спирачка</li>
-                        </ul>
-                    </div>
-
+                    <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 15px; color: #fff;">Настройки в Компютъра</h3>
+                    <p style="color: var(--text-muted); line-height: 1.6;">Прецизно настройване на ECU "мозъка" на звяра. Извличаме максимума, за да отговорим на вашите желания.</p>
                 </div>
             </div>
         </div>
@@ -1909,7 +1886,7 @@
             <div class="about-content reveal-left">
                 <div class="section-header" style="text-align: left; margin-bottom: 30px;">
                     <h2 style="font-size: clamp(2rem, 3.5vw, 2.5rem);">ЗА СЕРВИЗА</h2>
-                    <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; max-width: 800px;">Основна дейност на Автосервиз „Марин Авто“ е ремонт на стартери, алтернатори и автоклиматици на леки и лекотоварни автомобили. С дългогодишен опит, лично отношение и добре организирано сервизно обслужване.</p>
+                    <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; max-width: 800px;">Нашата страст е Nissan Patrol. Основната ни цел е да създаваме съвършени машини чрез безкомпромисно качество при ремонт на двигатели, създаване на индивидуално окачване и прецизни компютърни настройки на автомобила. Ние влагаме душа и сърце във всеки един автомобил.</p>
                 </div>
                 
                 <div class="features-list">
@@ -1950,32 +1927,32 @@
         <div class="container">
             <div class="section-header reveal">
                 <h2>Често Задавани Въпроси</h2>
-                <p>Отговори на най-популярните въпроси от нашите клиенти за автосервизните услуги.</p>
+                <p>Ето какво най-често ни питат собствениците на Nissan Patrol.</p>
             </div>
             
             <div class="faq-container reveal">
                 <div class="faq-item reveal delay-100">
-                    <button class="faq-question">Нужно ли е предварително записване на час? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <button class="faq-question">Работите ли по други автомобили освен Nissan Patrol? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Препоръчително е да запазите час предварително, за да гарантирам бързо и своевременно обслужване без излишно чакане. Можете да го направите на посочения телефон.</div>
+                        <div class="faq-answer-inner">Специализацията ни е изцяло насочена към модификации, ремонт и настройки на Nissan Patrol. Това ни позволява да сме най-добрите в това, което правим, и да предложим безкомпромисно качество.</div>
                     </div>
                 </div>
                 <div class="faq-item reveal delay-200">
-                    <button class="faq-question">Работите ли с гаранция за вложените авточасти? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <button class="faq-question">Колко време отнема изграждането на индивидуално окачване? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Да, категорично. Всички авточасти, закупени и вложени от мен, са придружени със съответната законова и производствена гаранция.</div>
+                        <div class="faq-answer-inner">Времето зависи от конкретните Ви желания и сложността на проекта. След първоначален оглед и обсъждане на изискванията Ви, можем да дадем точен срок за изпълнение.</div>
                     </div>
                 </div>
                 <div class="faq-item reveal delay-300">
-                    <button class="faq-question">Мога ли да донеса свои авточасти за ремонта? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <button class="faq-question">Предлагате ли гаранция за ремонтиран двигател или модификации? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Приемам работа с части на клиента, но в такъв случай не мога да поема отговорност и гаранция за качеството на вложената част - гаранцията важи само за извършения от мен труд.</div>
+                        <div class="faq-answer-inner">Категорично. Стоим зад работата си и предлагаме гаранция както за извършения труд, така и за новите компоненти, които сме вложили по звяра.</div>
                     </div>
                 </div>
                 <div class="faq-item reveal delay-400">
-                    <button class="faq-question">Колко време отнема стандартната компютърна диагностика? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+                    <button class="faq-question">Как мога да запиша час за консултация и преглед? <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Компютърната диагностика обикновено отнема между 20 и 40 минути, след което ще получите подробна информация за техническото състояние на автомобила и насоки за отстраняване на проблемите.</div>
+                        <div class="faq-answer-inner">Поради високата натовареност на сервиза, препоръчваме да се свържете с нас по телефона предварително, за да уговорим удобно време за обсъждане на Вашия проект.</div>
                     </div>
                 </div>
             </div>
@@ -2039,7 +2016,7 @@
                             <span class="logo-subtitle">ДИАГНОСТИКА И АВТОСЕРВИЗ</span>
                         </div>
                     </a>
-                    <p>Специализиран ремонт на стартери, алтернатори и автоклиматици в с. Горно Трапе. Дългогодишен опит, коректно отношение и доказано качество.</p>
+                    <p>Специализиран сервиз- ремонт на двигатели, индивидуално окачване и настройки в мозъка/компютъра на Nissan Patrol. Дългогодишен опит и доказано качество.</p>
                 </div>
                 
                 <div class="footer-links">
